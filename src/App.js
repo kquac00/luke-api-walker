@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import HeaderForm from './components/HeaderForm';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import People from './views/People';
+import Planets from './views/Planets';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='center'>
+      <HeaderForm />
+
+      <Routes>
+        <Route path="/people/:id" element={<People/>} />
+        <Route path="/planets/:id" element={<Planets/>} />
+      </Routes>
+
     </div>
   );
 }
